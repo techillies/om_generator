@@ -1,0 +1,43 @@
+[	{
+	"health": [{
+		"id" : "1",
+		"title" : "Sick Leave",
+		"header" : "Hi <<<manager_name>>>,",
+		"body" :  "I want to bring it to your kind attention that I am seriously ill. I am having sever back-pain and this takes time to get recovered.  Due to this reason I am not able to come to office from <<<from_date>>> to <<<to_date>>>. I request you to kindly, sanction my sick leave for the mentioned dates",
+		"footer" : "Regards",
+		"sender" : "<<<sender_name>>>"			
+		}, {
+		"id" : "2",
+		"title" : "Sick Leave",
+		"header" : "Dear <<<manager_name>>>,",
+		"body" :  "I am not feeling well from past few days so I want to take off from <<<from_date>>> to <<<to_date>>>. I am available through all modes of communication.",
+		"footer" : "Thanks",
+		"sender" : "<<<sender_name>>>"
+
+		}, {
+		"id" : "3",
+		"title" : "Doctor's Appointment",
+		"header" : "Dear <<<manager_name>>>,",
+		"body" :  "I am not feeling well from past few days so I want to take off from <<<from_date>>> to <<<to_date>>>. I am available through all modes of communication.",
+		"footer" : "Regards,",
+		"sender" : "<<<sender_name>>>"
+
+		}]
+	}, {
+	"wedding" : [{
+		"id" : "1",
+		"title" : "Cousin's Wedding",
+		"header" : "Hi <<<manager_name>>>,",
+		"body" :  "I want to take leave from <<<from_date>>> to <<<to_date>>> for my cousin's wedding. I request you to approve the leaves for mentiioned dates",
+		"footer" : "Thanks,",
+		"sender" : "<<<sender_name>>>"
+		}, {
+		"id" : "2",
+		"title" : "Sisters's Wedding",
+		"header" : "Hi <<<manager_name>>>,",
+		"body" :  "I want to take leave from <<<from_date>>> to <<<to_date>>> for my sister's wedding. I request you to approve the leaves for mentiioned dates",
+		"footer" : "Reagrds,",
+		"sender" : "<<<sender_name>>>"			
+		}]
+	}
+]

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+<head>
+	<title>online leave generator</title>
+	<title>Bootstrap Example</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-controller = "mainController">
+<div class="row col-md-12">
+	<div class="">
+		<header>
+			<nav class="navbar navbar-inverse">
+		  		<div class="container-fluid">
+			    	<div class="navbar-header">
+			      		<a class="navbar-brand text-center" href="#">Online E-mail Generator</a>
+			    	</div>
+				    <!-- <ul class="nav navbar-nav">
+				      <li class="active"><a href="#">Home</a></li>
+				      <li><a href="#">Page 1</a></li>
+				      <li><a href="#">Page 2</a></li>
+				      <li><a href="#">Page 3</a></li>
+				    </ul> -->
+		  		</div>
+			</nav>
+		</header>
+		<section class="col-md-3">
+			<div class="inputBoxWrapper">
+				<form class="inpu-group" name="myForm" ng-submit="submitForm()">
+				<div class="form-group">
+			      <label>Sender Name:</label>
+			      <input type="text" name="empName" ng-model="formData.name" class="form-control" id ="emp-name" placeholder="Ex: Suresh, Megha, All, etc" required>
+			    </div>
+
+			    <div class="form-group">
+			      <label>Receiver's Name:</label>
+			      <input type="text" class="form-control" name="manager-name" ng-model="formData.mgr_name" placeholder="Ex: HR Team, Sales Team etc." required>
+			    </div>
+
+			    <div class="form-group">
+			      <label>From Date:</label>
+			      <input type="text" class="form-control" name="from-date" ng-model="formData.from_date" placeholder="dd-mm-yyyy" required>
+			    </div>
+
+			    <div class="form-group">
+			      <label >To Date:</label>
+			      <input type="text" class="form-control" name="to-date" ng-model="formData.to_date" placeholder="dd-mm-yyyy" required>
+			    </div>    
+
+			    <div class="form-group">
+			      <label>Reason:</label>
+			     	<select class="form-control" ng-model= "formData.selectOption" required>
+						<option value="">select..</option>
+						<option value="health">Health</option>
+						<option value="wedding">Wedding</option>
+						<option value="funeral">funeral</option>
+					</select>
+			    </div>        
+				<button type="submit" class="btn btn-primary">Generate Templates</button>
+				</form>
+			</div>
+		</section>
+		<section class="col-md-9">
+
+			<div ng-show="showTemplates">
+			<h3 class="heading"> Your Email Templates <small>(Editable)</small> </h3>
+			<div class="leaveTemplates" ng-if = "reason == 'health'" ng-repeat="leave in leaves[0].health">
+
+				<button class="btn btn-success pull-right">Copy Count 120</button>
+
+				<button class="btn btn-danger pull-right"  ngclipboard data-clipboard-target="#health-{{leave.id}}">COPY!</button>
+
+				<div id="health-{{leave.id}}" contenteditable="true">
+					<div>{{leave.header}}</div>
+					<p></p>
+					<article>{{leave.body}}
+					</article>
+					<p></p>
+					<div>{{leave.footer}}</div>
+					<div>{{leave.sender}}</div>
+					</div>
+
+			</div>
+			<div class="leaveTemplates" ng-if ="reason == 'wedding'" ng-repeat="leave in leaves[1].wedding">
+			<button class="btn btn-success pull-right">Copy Count 120</button>
+			<button class="btn btn-danger pull-right"  ngclipboard data-clipboard-target="#wedding-{{leave.id}}">
+		    	COPY!
+				</button>
+				<div id="wedding-{{leave.id}}" contenteditable="true">
+					<div>{{leave.header}}</div>
+					<p></p>
+					<article>{{leave.body}}
+					</article>
+					<p></p>
+					<div>{{leave.footer}}</div>
+					<div>{{leave.sender}}</div>
+				</div>	
+				
+			</div>
+		</section>
+	</div>
+	
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
+<script src="js/ngclipboard.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js"></script> -->
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
